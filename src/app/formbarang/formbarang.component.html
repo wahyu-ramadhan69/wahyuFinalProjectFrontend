@@ -1,0 +1,103 @@
+<div class="overflow-x-auto">
+  <div
+    [ngClass]="{
+      'justify-center items-center bg-gray-100 overflow-hidden min-w-screen flex pt-6': true,
+      hidden: isClassForm
+    }"
+  >
+    <div
+      class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+    >
+      <form (submit)="tambahBarang()">
+        <!--Name input-->
+        <div class="relative mb-6" data-te-input-wrapper-init>
+          <input
+            type="text"
+            name="nama"
+            [(ngModel)]="barang.nama"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="exampleInput7"
+            placeholder="Nama Barang"
+          />
+          <label
+            for="exampleInput7"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] text-neutral-500 leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+            >Nama Barang
+          </label>
+        </div>
+
+        <!--Email input-->
+        <div class="relative mb-6" data-te-input-wrapper-init>
+          <input
+            type="number"
+            name="harga"
+            [(ngModel)]="barang.harga"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="exampleInput8"
+            placeholder="Harga Barang"
+          />
+          <label
+            for="exampleInput8"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+            >Harga barang
+          </label>
+        </div>
+
+        <div class="relative mb-6" data-te-input-wrapper-init>
+          <input
+            type="number"
+            name="stok"
+            [(ngModel)]="barang.stok"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.50rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="exampleInput8"
+            placeholder="Stok Barang"
+          />
+          <label
+            for="exampleInput8"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:peer-focus:text-primary"
+            >Stok barang
+          </label>
+        </div>
+
+        <!--Message textarea-->
+        <div class="relative mb-6" data-te-input-wrapper-init>
+          <textarea
+            name="deskripsi"
+            [(ngModel)]="barang.deskripsi"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="exampleFormControlTextarea13"
+            rows="3"
+            placeholder="Message"
+          ></textarea>
+          <label
+            for="exampleFormControlTextarea13"
+            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+            >Message
+          </label>
+        </div>
+        <div class="mb-6">
+          <input
+            class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
+            type="file"
+            #gambarInput
+            (change)="previewGambar($event)"
+            id="formFile"
+          />
+
+          <img
+            *ngIf="gambarPreview"
+            [src]="gambarPreview"
+            alt="Preview Gambar"
+          />
+        </div>
+        <!--Submit button-->
+        <button
+          type="submit"
+          class="bg-emerald-500 text-white text-xs font-bold rounded-md py-2 px-8"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
